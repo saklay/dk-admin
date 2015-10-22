@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: OpenSansLight, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: normal !important;
+            color: #eaeaea;
+        }
+        
+        h1 {
+        	font-weight: normal !important;
+			font-size: 24px;
+			margin-top: 20px;
+			margin-bottom: 10px;
+        }
+        
+        ul {
+        	margin: 0;
+        	padding: 0;
+        }
+        
+        ul li {
+        	list-style: none;
+        }
+        
+        ul li div.level1 {
+        	width: 95%;
+        	padding: 7px 10px;
+        	background: #454547;
+        	-webkit-border-radius: 5px 0 0 5px;
+			-moz-border-radius: 5px 0 0 5px;
+			-ms-border-radius: 5px 0 0 5px;
+			-o-border-radius: 5px 0 0 5px;
+			border-radius: 5px 0 0 5px;
+			margin: 7px 0;
+        }
+        
+        ul li a {
+        	color: #eaeaea;
+        	text-decoration: none;
+        }
+        
+        ul li ul {
+        	margin: 7px 0 7px 30px;
+        }
+        
+        ul li ul li div.level2 {
+        	width: 95%;
+        	padding: 7px 10px;
+        	background: none;
+        	-webkit-border-radius: 5px 0 0 5px;
+			-moz-border-radius: 5px 0 0 5px;
+			-ms-border-radius: 5px 0 0 5px;
+			-o-border-radius: 5px 0 0 5px;
+			border-radius: 5px 0 0 5px;
+			margin: 7px 0;
+        }
+        ul li ul li div.selected, ul li ul li div.level2:hover {
+        	background: #595959;
+        }
+        
+        ul li ul li ul {
+        	margin: 7px 0 7px 30px;
+        }
+        
+        ul li ul li ul li div.level3 {
+        	width: 94%;
+        	padding: 7px 10px;
+        	background: none;
+        	-webkit-border-radius: 5px 0 0 5px;
+			-moz-border-radius: 5px 0 0 5px;
+			-ms-border-radius: 5px 0 0 5px;
+			-o-border-radius: 5px 0 0 5px;
+			border-radius: 5px 0 0 5px;
+			margin: 7px 0;
+        }
+        
+        ul li ul li ul li div.selected, ul li ul li ul li div:hover {
+        	background: #6b6b6b;
+        }
+        
+        .add {
+        	float: right;
+        	font-weight: bold;
+        	clear: both;
+        }
+        
+        a.btnProject {
+        	font-family: OpenSansLight, Helvetica, Arial, sans-serif;
+			color: #ececec;
+			font-size: 16px;
+			background: #7c7c7c;
+			padding: 10px 15px;
+			border: none;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
+			margin: 10px 0 20px 0;
+			text-decoration: none;
+			display: block;
+			width: 150px;
+		}
+		
+		a.btnHypothesis {
+        	font-family: OpenSansLight, Helvetica, Arial, sans-serif;
+			color: #ececec;
+			font-size: 16px;
+			background: #7c7c7c;
+			padding: 10px 15px;
+			border: none;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
+			margin: 10px 0 0 0;
+			text-decoration: none;
+			display: block;
+			width: 120px;
+		}
+		
+		.btnPullout {
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
+			border: 1px solid #262626;
+			white-space: nowrap;
+			padding: 7px 15px 7px 5px;
+			display: inline-block;
+		}
+		
+		.btnPullout:hover {
+			border: 1px solid #0085a9;
+		}
+		
+		.btnPullout a {
+			font-family: OpenSansLight, Helvetica, Arial, sans-serif;
+			color: #ececec;
+			font-size: 16px;
+			text-decoration: none;
+			display: block;
+		}
+		
+		.btplus {
+			background: #0085a9;
+			font-weight: bold;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			-ms-border-radius: 3px;
+			-o-border-radius: 3px;
+			border-radius: 3px;
+			padding: 1px 8px;
+			margin: 0 5px;
+		}
+    </style>
+    
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/tooltipster.css" />
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+	<script>
+window.onload = function() {
+    parent.iframeLoaded();
+}
+		$(document).ready(function() {
+			$('.level2').click(function(){
+				
+			});
+			$('.tooltip').tooltipster();
+			$('.level-link').click(function(){
+				var collapse_content_selector = $(this).attr('href');
+				var collapse_content_selector_text = $(this).attr('data');
+ 
+				var toggle_switch = $(this);
+				$(collapse_content_selector).toggle(function(){
+					var arrow_link = '';
+			  		if($(this).css('display')=='none'){
+			  			if (toggle_switch.parent().attr('id')!='level3') var arrow_link = '<span class="level-link-arrow">&#9655;</span> ';
+			  			toggle_switch.parent().removeClass('selected');
+						toggle_switch.html(arrow_link+'<span class="level-link-text">'+collapse_content_selector_text+'</span>');
+			  		}else{
+			  			if (toggle_switch.parent().attr('id')!='level3') {
+			  				var arrow_link = '<span class="level-link-arrow">&#9661;</span> ';
+			  			} else {
+			  				$('.level3').removeClass('selected');
+			  			}
+			  			toggle_switch.parent().addClass('selected');
+						toggle_switch.html(arrow_link+'<span class="level-link-text">'+collapse_content_selector_text+'</span>');
+			  		}
+				});
+			});
+ 
+		});	
+	</script>
+</head>
+<div id="secondary">
+    
+    <h1>Project Manager</h1>
+    <div class="btnPullout"><a href="#"><span class="btplus">+</span> <span>New Project</span></a></div>
+    <ul>
+    	<li>
+    		<div class="level1 tooltip" title="Help information regarding Discover Data Sets"><a href="#ul1-link1" class="level-link" data="Discover Data Sets"><span class="level-link-arrow">&#9655;</span> <span class="level-link-text">Discover Data Sets</span></a></div>
+    		<ul id="ul1-link1" style="display:none;">
+    			<div class="btnPullout"><a href="#"><span class="btplus">+</span> <span>New Hypothesis</span></a></div>
+    			<li>
+    				<div class="level2 tooltip" title="Help information regarding Hypothesis 1"><a href="#ul1-ul1-link1" class="level-link" data="Hypothesis 1"><span class="level-link-arrow">&#9655;</span> <span class="level-link-text">Hypothesis 1</span></a></div>
+    				<ul id="ul1-ul1-link1" style="display:none;">
+    					<div class="btnPullout"><a href="#"><span class="btplus">+</span> <span>New Data Flow</span></a></div>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 1"><a href="#ul1-ul1-ul1-link1" class="level-link" data="Data Flow 1"><span class="level-link-text" id="dataflow1">Data Flow 1</span></a> <span id="ul1-ul1-ul1-link1" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 2"><a href="#ul1-ul1-ul1-link2" class="level-link" data="Data Flow 2"><span class="level-link-text">Data Flow 2</span></a> <span id="ul1-ul1-ul1-link2" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 3"><a href="#ul1-ul1-ul1-link3" class="level-link" data="Data Flow 3"><span class="level-link-text">Data Flow 3</span></a> <span id="ul1-ul1-ul1-link3" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 4"><a href="#ul1-ul1-ul1-link4" class="level-link" data="Data Flow 4"><span class="level-link-text">Data Flow 4</span></a> <span id="ul1-ul1-ul1-link4" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 5"><a href="#ul1-ul1-ul1-link5" class="level-link" data="Data Flow 5"><span class="level-link-text">Data Flow 5</span></a> <span id="ul1-ul1-ul1-link5" style="display:none;"></span></div>
+    					</li>
+    				</ul>
+    			</li>
+    			
+    			<li>
+    				<div class="level2 tooltip"  title="Help information regarding Hypothesis 2"><a href="#ul1-ul1-link2" class="level-link" data="Hypothesis 2"><span class="level-link-arrow">&#9655;</span> <span class="level-link-text">Hypothesis 2</span></a></div>
+    				<ul id="ul1-ul1-link2" style="display:none;">
+    					<div class="btnPullout"><a href="#"><span class="btplus">+</span> <span>New Data Flow</span></a></div>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 1"><a href="#ul1-ul1-ul2-link1" class="level-link" data="Data Flow 1"><span class="level-link-text">Data Flow 1</span></a> <span id="ul1-ul1-ul2-link1" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 2"><a href="#ul1-ul1-ul2-link2" class="level-link" data="Data Flow 2"><span class="level-link-text">Data Flow 2</span></a> <span id="ul1-ul1-ul2-link2" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 3"><a href="#ul1-ul1-ul2-link3" class="level-link" data="Data Flow 3"><span class="level-link-text">Data Flow 3</span></a> <span id="ul1-ul1-ul2-link3" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 4"><a href="#ul1-ul1-ul2-link4" class="level-link" data="Data Flow 4"><span class="level-link-text">Data Flow 4</span></a> <span id="ul1-ul1-ul2-link4" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 5"><a href="#ul1-ul1-ul2-link5" class="level-link" data="Data Flow 5"><span class="level-link-text">Data Flow 5</span></a> <span id="ul1-ul1-ul2-link5" style="display:none;"></span></div>
+    					</li>
+    				</ul>
+    			</li>
+    			
+    			<li>
+    				<div class="level2 tooltip" title="Help information regarding Hypothesis 3"><a href="#ul1-ul1-link3" class="level-link" data="Hypothesis 3"><span class="level-link-arrow">&#9655;</span> <span class="level-link-text">Hypothesis 3</span></a></div>
+    				<ul id="ul1-ul1-link3" style="display:none;">
+    					<div class="btnPullout"><a href="#"><span class="btplus">+</span> <span>New Data Flow</span></a></div>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 1"><a href="#ul1-ul1-ul3-link1" class="level-link" data="Data Flow 1"><span class="level-link-text">Data Flow 1</span></a> <span id="ul1-ul1-ul3-link1" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 2"><a href="#ul1-ul1-ul3-link2" class="level-link" data="Data Flow 2"><span class="level-link-text">Data Flow 2</span></a> <span id="ul1-ul1-ul3-link2" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 3"><a href="#ul1-ul1-ul3-link3" class="level-link" data="Data Flow 3"><span class="level-link-text">Data Flow 3</span></a> <span id="ul1-ul1-ul3-link3" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 4"><a href="#ul1-ul1-ul3-link4" class="level-link" data="Data Flow 4"><span class="level-link-text">Data Flow 4</span></a> <span id="ul1-ul1-ul3-link4" style="display:none;"></span></div>
+    					</li>
+    					<li>
+    						<div id="level3" class="level3 tooltip" title="Help information regarding Data Flow 5"><a href="#ul1-ul1-ul3-link5" class="level-link" data="Data Flow 5"><span class="level-link-text">Data Flow 5</span></a> <span id="ul1-ul1-ul3-link5" style="display:none;"></span></div>
+    					</li>
+    				</ul>
+    			</li>
+    		</ul>
+    	</li>
+    	<li>
+    		<div class="level1 tooltip" title="Help information regarding All Data Sets"><span>&#9655;</span> <span><a href="#">All Data Sets</a></span></div>
+    	</li>
+    	<li>
+    		<div class="level1 tooltip" title="Help information regarding DataKin User Base"><span>&#9655;</span> <span><a href="#">DataKin User Base</a></span>
+    	</li>
+    	<li>
+    		<div class="level1 tooltip" title="Help information regarding Table Creation"><span>&#9655;</span> <span><a href="#">Table Creation</a></span>
+    	</li>
+    	<li>
+    		<div class="level1 tooltip" title="Help information regarding Refine Data"><span>&#9655;</span> <span><a href="#">Refine Data</a></span>
+    	</li>
+    </ul>
+    
+</div>

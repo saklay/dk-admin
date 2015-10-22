@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Basic Page Needs -->
+<meta charset="utf-8" />
+<title>DataKin</title>
+<!-- Metas -->
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/fonts.css" />
+<link rel="stylesheet" href="css/tooltipster.css" />
+<link rel="stylesheet" href="css/ss-standard.css" />
+<link rel="stylesheet" href="css/jquery.pageslide.css" />
+<link rel="stylesheet" href="css/jquery-hover-dropdown-box.css" />
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/jquery.tagsinput.css" />
+<link rel="stylesheet" href="css/tooltipster.css" />
+<link rel="stylesheet" href="css/jquery.pageslide.css" />
+<link rel="stylesheet" href="css/jquery.fancybox.css" />
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<!-- Favicon and touch icons -->
+<link rel="shortcut icon" type="image/x-icon" href="images/DataKin_favicon.ico">
+</head>
+
+<body>
+<header>
+	<div class="pancake-container"><a href="#secondary" class="pancake-nav">Menu</a></div>
+	<div class="container" id="container-header">
+		<div class="row-fluid">
+			<div class="span2 logo-header-width">
+				<div class="row-fluid">
+					<div class="span1"></div>
+					<div class="span11"><div><a href="/"><div class="logo"></div></a></div></div>
+				</div>
+			</div>
+			<div class="span2">
+				<div class="row-fluid">
+					<div class="span12 nowrap">
+						<div class="quick-analysis-container"><a href="" data-toggle="modal" data-target="#modal-quickanalysis" class="quick-analysis newlink-modal">Quick Analysis</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="span5 searchbox-container">
+				<div class="search-container">
+					<div class="search-text">
+						<span>Search</span> <span class="ss-search header-search"></span>
+					</div>
+					<div class="search-box">
+						<form>
+							<div class="list-navigation">
+								<div id="listnav">
+									<div><span class="ss-list"></span><span class="ss-navigatedown"></span></div>
+								</div>
+								<div class="list-dropdown">
+									<ul class="dropdown-nav">
+										<li><a href="#">Project</a></li>
+										<li><a href="#">Hypothesis</a></li>
+										<li><a href="#">Model Flow</a></li>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<div><input type="text" class="searchbox" value="Search" onblur="if(this.value==''){this.value='Search'}" onfocus="if(this.value=='Search'){this.value=''}" /></div>
+								<div id="search-icon" class="ss-search"></div>
+							</div>
+							<div class="ss-delete header-search-delete"></div>
+							
+							
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="span3 userinfo-container">
+				<div class="userbox userinfo">
+					<div class="row-fluid">
+						<div class="span4"><img src="images/user-john.jpg" /></div>
+						<div class="span7 textleft nowrap">
+							<div class="username nowrap">John Baker</div>
+							<div class="position nowrap">Data Scientist</div>
+						</div>
+						<div class="span1 user-navigation ss-navigatedown"></div>
+					</div>
+				</div>
+				<div class="userinfo-dropdown">
+					<ul>
+						<li><span class="ss-settings"></span> <span><a href="#">Account Settings</a></span></li>
+						<li><span class="ss-logout"></span> <span><a href="#">Logout</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- end header -->
+
+<!-- Modal Quick Analysis -->
+<div class="modal hide fade" id="modal-quickanalysis">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Quick Analyses</h3>
+  </div>
+  <div class="modal-body">
+	<form>
+		<div>Name</div>
+		<div><input type="text" /></div>
+		<div>Description</div>
+		<div><input type="text" /></div>
+		<div>Tags</div>
+		<div><input type="text" class="tags-container" value="" /></div>
+	</form>
+  </div>
+  <!-- end modal-body -->
+  <div class="modal-footer"> <a data-dismiss="modal" class="btn">Close</a> </div>
+</div>
+
+<!-- Modal Share KinBoard-->
+<div class="modal hide fade" id="modal-newshare">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Share KinBoard Activity</h3>
+  </div>
+  <div class="modal-body">
+	<form id="share-form">
+		<div><textarea>Enter Share Message...</textarea></div>
+		<div class="share-options">
+			<span><input type="radio" name="btshare" value=".share-team" checked /> Share with Team</span>
+			<span class="marginLeft10"><input type="radio" name="btshare" value=".share-email" /> Email</span>
+		</div>
+		<div class="share-div share-team">
+			<div class="row-fluid">
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+				<div class="span4"><input type="checkbox" /> Jonathan Smith</div>
+			</div>
+		</div>
+		<div class="share-div share-email" style="display: none;"><textarea>udi.dotan@datakin.io, john.baker@datakin.io</textarea></div>
+	</form>
+  </div>
+  <!-- end modal-body -->
+  <div class="modal-footer"> <a data-dismiss="modal" class="btn btncancel">Cancel</a> <a data-dismiss="modal" class="btn btnsend">Send</a></div>
+</div>
+
+<!-- Modal Teams -->
+<div class="modal hide fade" id="modal-teams" style="color:#000;">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <select>
+    	<option>Sort By</option>
+    	<option>Name</option>
+    	<option>Teams</option>
+    </select>
+  </div>
+  <div class="modal-body">
+  	<ul class="teamNav">
+  		<li class="active" rel="#tabs-1">Individuals</li>
+  		<li rel="#tabs-2">Teams</li>
+  	</ul>
+  	<div class="team-container">
+	  	<div id="tabs-1" class="DKTab-container">
+	  		<br />
+	  		<div class="row-fluid team-names">
+	  			<div class="span3">
+	  				<div><img src="images/user-udi-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Udi Dotan</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-chris-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Chris Hornung</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  		</div>
+	  		<br />
+	  		<div class="row-fluid team-names">
+	  			<div class="span3">
+	  				<div><img src="images/user-udi-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Udi Dotan</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-chris-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Chris Hornung</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<div id="tabs-2" class="DKTab-container" style="display:none;">
+	  		<h4>Team Name</h4>
+	  		<div class="row-fluid team-members">
+	  			<div class="span3">
+	  				<div><img src="images/user-udi-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Udi Dotan</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-chris-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Chris Hornung</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  		</div>
+	  		<h4>Team Name</h4>
+	  		<div class="row-fluid team-members">
+	  			<div class="span3">
+	  				<div><img src="images/user-udi-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Udi Dotan</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-chris-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>Chris Hornung</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  			<div class="span3">
+	  				<div><img src="images/user-john-large.png" border=0" class="member img-responsive" /></div>
+	  				<div>John Baker</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	</div>
+  </div>
+  <!-- end modal-body -->
+  <div class="modal-footer"> <a data-dismiss="modal" class="btn">Close</a> </div>
+</div>
+
+<!-- Modal -->
+<div id="modal-dataflow" style="display:none;color:#000;">
+	<form>
+		<div>Name</div>
+		<div><input type="text" /></div>
+		<div>Description</div>
+		<div><input type="text" /></div>
+		<div>Tags</div>
+		<div><input type="text" class="tags-container" value="" /></div>
+	</form>
+</div>
+
+<!-- Model Flow Lightbox -->
+<div id="expanddataflow" style="width:auto;height:auto;display:none;">
+	<div class="row-fluid">
+		<div class="span10 dataflow-modal-content">
+		</div>
+		<div id="kinection-modal" class="span2 width10">
+			<div class="kinect-modal-content kinection-regular">
+			</div>
+		</div>
+	</div>
+</div>
+
+<section id="intro">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="breadcrumbs">
+					<span class="current">Home</span>
+					<span class="level1">Project</span>
+					<span class="level2">Hypothesis</span>
+					<span class="level3">Data Flow</span>
+				</div>
+				<br /><br />
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="data-container">
+	<div class="container">
+		<div id="maincontent-container" class="row-fluid">
+			
+			<div id="ajax-content" class="span12">
+				
+<div id="hypothesis-details">
+				
+					<div class="row-fluid title-container">
+						<div class="span11 editable-fields">
+							<h1 class="title">SVM/Domains</h1>
+						</div>
+						<div class="span1 edit-icon" style="display:none;">
+							<div class="ss-write"></div>
+						</div>
+					</div>
+					<div class="row-fluid title-container">
+						<div class="span11 editable-fields">
+							<p>Pull all age data for known users. Profile online activity for top 100/500/1000/5000 domains by age for known users. Use holdout group to determine accuracy using SVM model.</p>
+						</div>
+						<div class="span1 edit-icon" style="display:none;">
+							<div class="ss-write"></div>
+						</div>
+					</div>
+					
+					<div class="module-header">
+						<div class="row-fluid">
+							<div class="span12"><h1>Model Flow</h1></div>
+						</div>
+					</div>
+
+<div id="model-flow-content">
+<ul id="modelflowtabs" class="nav nav-tabs">
+    <li class="always-visible"><a href="#source" class="source" data-toggle="tab"><img src="images/icon-kingreen.png" border=0 /> Source</a></li>
+    <li class="active"><a href="#modify" class="modify" data-toggle="tab"><img src="images/icon-kinblue.png" border=0 /> Modify</a></li>
+    <li><a href="#model" class="model" data-toggle="tab"><img src="images/icon-kinred.png" border=0 /> Model</a></li>
+</ul>
+<div class="row-fluid modelflowtabs-content">
+    <div class="row-fluid">
+        <div class="tab-content span12">
+            <div class="tab-pane" id="source">
+            	<br />
+            	<div class="row-fluid">
+            		<div class="span10"><h5>Model Title</h5></div>
+            		<div class="span2 status"></div>
+            	</div>
+            	<div class="text-center"><img src="images/modelflow-source2.png" border=0 class="img-responsive" /></div>
+            	<br />
+            	<div class="textright"><a href="#" class="btsave">Save & Continue</a></div>
+            	<br />
+            </div>
+            <div class="tab-pane active" id="modify">
+            	<br />
+            	<iframe class="modify-content" src="http://ec2-54-85-38-100.compute-1.amazonaws.com:3333/project?project=1873056524867"></iframe>
+            </div>
+            <div class="tab-pane" id="model">
+            	<br />
+            	<div class="row-fluid">
+            		<div class="span10"><h5>SVM/Domains</h5></div>
+            		<div class="span2 status">Saved 03/23/14 @ 2:23pm</div>
+            	</div>
+            	<div class="text-center"><img src="images/modelflow-rstudio.png" border=0 class="img-responsive" /></div>
+            	<br />
+            	<div class="textright"><a href="#" class="btsave">Save</a></div>
+            	<br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+
+
+</div>
+
+			
+			<div id="kinection" class="span2 kinscroll" style="display:none;">
+				
+				<div class="kinection-full" style="display:none;">
+				<div class="module-header">
+					<div class="row-fluid">
+						<div class="span4"><h1><span class="text-red">Kin</span>ections</h1></div>
+						<div class="span8 textright">
+							<ul id="kinection-icons">
+								<li>
+									<div class="search-text"><span>Search</span> <span class="ss-search"></span></div>
+									<div class="search-box" style="display:none;">
+										<form>
+											<div>
+												<div><input type="text" class="searchbox" value="Search" onblur="if(this.value==''){this.value='Search'}" onfocus="if(this.value=='Search'){this.value=''}" /></div>
+												<div id="search-icon" class="ss-search"></div>
+											</div>
+											<div class="ss-delete header-search-delete"></div>
+										</form>
+									</div>
+								</li>
+								<li><a href="" data-toggle="modal" data-target="#modal-newshare"><div class="icon-share"></div></a></li>
+								<li><div id="icon-filters" class="ss-filter"></div></li>
+								<li class="dropdown">
+									<div data-toggle="dropdown" class="ss-columns changewidth"></div>
+									<ul class="dropdown-menu changewidthmenu textleft" role="menu" aria-labelledby="dLabel" style="display:none;">
+											<li><a href="javascript:changeKinect(10);" rel="10">Mini View</a></li>
+											<li><a href="javascript:changeKinect(50);" rel="50">Normal View</a></li>
+											<li><a href="javascript:changeKinect(100);" rel="100">Full View</a></li>
+									</ul>
+								</li>
+							</ul>
+							<div class="clearAll"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="box kin-full">
+					<div class="vertical-line"></div>
+					
+					<div class="row-fluid">
+						<div class="span2 textcenter">
+							<div class="kinect-date">May 27</div>
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span2">
+							<div class="row-fluid">
+								<div class="span5 timestamp"><br /><br />5:45pm</div>
+								<div class="span7"><br /><br /><div class="icon-kinred icon-box"></div></div>
+							</div>
+						</div>
+						<div class="span10 bubblebox">
+							<div class="bubble" style="width: 480px;height: 200px; position: absolute; margin-left: 530px; margin-top: 50px;">
+								<div class="bubbletail"></div>
+								<div class="kinections-container kinections-bubble">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><img src="images/user-john.jpg" /></div>
+										<div class="span10">
+											<div class="title">Added on May 27th, 2014 @ 5:55pm</div>
+										</div>
+									</div>
+								</div>
+								<div class="kinections-container kinections-bubble noborder">
+									<p><img src="images/kinect-image3.png" border=0 class="img-responsive" /></p>
+								</div>
+							</div>
+							<div class="bubble">
+								<div class="bubbletail"></div>
+								<div class="favorite-container icon-favorite firstbubble"></div>
+								<div class="kinections-container kinections-bubble">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><input type="checkbox" /></div>
+										<div class="span1 textcenter"><img src="images/user-john-small.png" /></div>
+										<div class="span10">
+											<div class="title">creates <a href="#">Logistical Regression Model</a></div>
+											<div>
+												<span class="icon-redirect"></span>
+												<span class="icon-paperclip"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="kinections-container kinections-bubble comment-container noborder">
+									<div class="row-fluid">
+										<div class="span1"></div>
+										<div class="span11">
+											<div class="row-fluid">
+												<div class="span2"><span class="icon-nextcomment"></span> <span><img src="images/user-john-small.png" /></span></div>
+												<div class="span10">
+													<div class="title">Attached <a href="#">Logistical Regression Graph</a> on May 27th, 2014 @ 5:55pm</div>
+													<br />
+													<p>Here is the visual of the model.  It improved prediction from 77.3% to 83.2% for the same population.</p>
+													<br />
+													<p><img src="images/kinect-image.png" border=0 class="img-responsive" /></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> <!-- .bubble -->
+							
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span2">
+							<div class="row-fluid">
+								<div class="span5 timestamp"><br /><br />4:30pm</div>
+								<div class="span7"><br /><br /><div class="icon-kinblue icon-box"></div></div>
+							</div>
+						</div>
+						<div class="span10 bubblebox">
+							<div class="bubble">
+								<div class="bubbletail"></div>
+								<div class="favorite-container icon-favorite firstbubble"></div>
+								<div class="kinections-container kinections-bubble">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><input type="checkbox" /></div>
+										<div class="span1 textcenter"><img src="images/user-chris-small.png" /></div>
+										<div class="span10">
+											<div class="title">joined <a href="#">Domain Categorization</a></div>
+											<br />
+											<p><img src="images/kinect-image2.png" border=0 class="img-responsive" /></p>
+										</div>
+									</div>
+								</div>
+							</div> <!-- .bubble -->
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span2">
+							<div class="row-fluid">
+								<div class="span5 timestamp"><br /><br />3:02pm</div>
+								<div class="span7"><br /><br /><div class="icon-kingreen icon-box"></div></div>
+							</div>
+						</div>
+						<div class="span10 bubblebox">
+							<div class="bubble">
+								<div class="bubbletail"></div>
+								<div class="favorite-container icon-favorite firstbubble"></div>
+								<div class="kinections-container kinections-bubble">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><input type="checkbox" /></div>
+										<div class="span1 textcenter"><img src="images/user-udi-small.png" /></div>
+										<div class="span10">
+											<div class="title">Filtered source data from 1M to 50k records</div>
+											<br />
+											<p><img src="images/kinect-image2.png" border=0 class="img-responsive" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="kinections-container kinections-bubble comment-container">
+									<div class="row-fluid">
+										<div class="span1"></div>
+										<div class="span11">
+											<div class="row-fluid">
+												<div class="span2"><span class="icon-nextcomment"></span> <span><img src="images/user-udi-small.png" /></span></div>
+												<div class="span10">
+													<div class="title">Attached <a href="#">Logistical Regression Graph</a> on May 27th, 2014 @ 1:42pm</div>
+													<br />
+													<p>This is the list of users with known demographics.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="kinections-container kinections-bubble comment-container noborder">
+									<div class="row-fluid">
+										<div class="span1"></div>
+										<div class="span11">
+											<div class="row-fluid">
+												<div class="span2"><span class="icon-nextcomment"></span> <span><img src="images/user-john-small.png" /></span></div>
+												<div class="span10">
+													<div class="title">Attached <a href="#">Logistical Regression Graph</a> on May 27th, 2014 @ 1:42pm</div>
+													<br />
+													<p>Can we convert the domains to categories?  I'd like to run my model at the domain level as well as the category level.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> <!-- .bubble -->
+						</div>
+					</div>
+					
+				</div>
+				
+				</div> <!-- .kinection-full -->
+				
+				<div class="kinection-regular">
+				<div class="module-header">
+					<div class="row-fluid">
+						<div class="span4 kin50"><h1><span class="text-red">Kin</span>ections</h1></div>
+						<div class="span8 textright">
+							<ul id="kinection-icons">
+								<li><div class="icon-logo kin10"></div></li>
+								<li class="kin50">
+									<div class="search-text"><span>Search</span> <span class="ss-search"></span></div>
+									<div class="search-box" style="display:none;">
+										<form>
+											<div>
+												<div><input type="text" class="searchbox" value="Search" onblur="if(this.value==''){this.value='Search'}" onfocus="if(this.value=='Search'){this.value=''}" /></div>
+												<div id="search-icon" class="ss-search"></div>
+											</div>
+											<div class="ss-delete header-search-delete"></div>
+										</form>
+									</div>
+								</li>
+								<li class="kin50"><a href="" data-toggle="modal" data-target="#modal-newshare"><div class="icon-share"></div></a></li>
+								<li><div id="icon-filters" class="ss-filter"></div></li>
+								<li class="dropdown">
+									<div data-toggle="dropdown" class="ss-columns changewidth"></div>
+									<ul class="dropdown-menu changewidthmenu textleft" role="menu" aria-labelledby="dLabel" style="display:none;">
+											<li><a href="javascript:changeKinect(10);" rel="10">Mini View</a></li>
+											<li><a href="javascript:changeKinect(50);" rel="50">Normal View</a></li>
+											<li><a href="javascript:changeKinect(100);" rel="100">Full View</a></li>
+									</ul>
+								</li>
+							</ul>
+							<div class="clearAll"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="box">
+					
+					<div class="kinect-date-container current-date">
+						<hr />
+						<div class="kinect-date">May 27</div>
+						<div class="clearAll"></div>
+					</div>
+					
+					<div class="kinect-timeline">
+					<div class="kinections-container">
+						<div class="favorite-container icon-favorite firstcontainer kin50"></div>
+						<div class="row-fluid">
+								<div class="span3 kin50">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><input type="checkbox" /></div>
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textright"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+								<div class="span9 kin50">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><img src="images/user-udi-small.png" /></div>
+										<div class="span11">
+											<div class="title">Created <a href="#">Data Flow 3</a> in Hypothesis Classifier Sensitivity</div>
+											<div>
+												<span class="icon-redirect"></span>
+												<span class="icon-paperclip"></span>
+												<span><img src="images/user-udi-small.png" /></span>
+												<span><img src="images/user-john-small.png" /></span>
+												<span><img src="images/user-chris-small.png" /></span>
+												<span class="icon-comments"></span>
+												<span>3</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span12 kin10">
+									<div class="row-fluid">
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textcenter"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+					<div class="kinections-container comment-container kin50">
+						<div class="row-fluid">
+								<div class="span1"></div>
+								<div class="span11">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><span class="icon-nextcomment"></span> <span><img src="images/user-john-small.png" /></span></div>
+										<div class="span10">
+											<div class="title">on May 27th, 2014 @ 1:24pm</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<p><img src="images/kinect-image.png" border=0 /></p>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+					<div class="kinections-container comment-container kin50">
+						<div class="row-fluid">
+								<div class="span1"></div>
+								<div class="span11">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><span class="icon-nextcomment"></span> <span><img src="images/user-udi-small.png" /></span></div>
+										<div class="span10">
+											<div class="title">on May 27th, 2014 @ 1:24pm</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+					<div class="kinections-container comment-container kin50">
+						<div class="row-fluid">
+								<div class="span1"></div>
+								<div class="span11">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><span class="icon-nextcomment"></span> <span><img src="images/user-john-small.png" /></span></div>
+										<div class="span10">
+											<div class="title">on May 27th, 2014 @ 1:24pm</div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+					<div class="kinections-container">
+						<div class="favorite-container icon-favorite kin50"></div>
+						<div class="row-fluid">
+								<div class="span3 kin50">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><input type="checkbox" /></div>
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textright"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+								<div class="span9 kin50">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><img src="images/user-udi-small.png" /></div>
+										<div class="span11">
+											<div class="title">Created <a href="#">Data Flow 3</a> in Hypothesis Classifier Sensitivity</div>
+											<div>
+												<span class="icon-redirect"></span>
+												<span class="icon-paperclip"></span>
+												<span><img src="images/user-udi-small.png" /></span>
+												<span><img src="images/user-john-small.png" /></span>
+												<span><img src="images/user-chris-small.png" /></span>
+												<span class="icon-comments"></span>
+												<span>3</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span12 kin10">
+									<div class="row-fluid">
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textcenter"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+					<div class="kinections-container noborder">
+						<div class="row-fluid">
+								<div class="span3 kin50">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><input type="checkbox" /></div>
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textright"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+								<div class="span9 kin50">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><img src="images/user-udi-small.png" /></div>
+										<div class="span11">
+											<div class="title">Created <a href="#">Data Flow 3</a> in Hypothesis Classifier Sensitivity</div>
+											<div>
+												<span class="icon-redirect"></span>
+												<span class="icon-paperclip"></span>
+												<span><img src="images/user-udi-small.png" /></span>
+												<span><img src="images/user-john-small.png" /></span>
+												<span><img src="images/user-chris-small.png" /></span>
+												<span class="icon-comments"></span>
+												<span>3</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span12 kin10">
+									<div class="row-fluid">
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textcenter"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+						</div>
+					</div>
+					</div> <!-- .kinect-timeline -->
+					
+					<div class="kinect-date-container">
+						<hr />
+						<div class="kinect-date">May 26</div>
+						<div class="clearAll"></div>
+					</div>
+					
+					<div class="kinect-timeline">
+					<div class="kinections-container">
+						<div class="row-fluid">
+								<div class="span3 kin50">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><input type="checkbox" /></div>
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textright"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+								<div class="span9 kin50">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><img src="images/user-udi-small.png" /></div>
+										<div class="span11">
+											<div class="title">Created <a href="#">Data Flow 3</a> in Hypothesis Classifier Sensitivity</div>
+											<div>
+												<span class="icon-redirect"></span>
+												<span class="icon-paperclip"></span>
+												<span><img src="images/user-udi-small.png" /></span>
+												<span><img src="images/user-john-small.png" /></span>
+												<span><img src="images/user-chris-small.png" /></span>
+												<span class="icon-comments"></span>
+												<span>3</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span12 kin10">
+									<div class="row-fluid">
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textcenter"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+						</div>
+					</div>
+					
+					<div class="kinections-container">
+						<div class="row-fluid">
+								<div class="span3 kin50">
+									<div class="row-fluid">
+										<div class="span2 textcenter"><input type="checkbox" /></div>
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textright"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+								<div class="span9 kin50">
+									<div class="row-fluid">
+										<div class="span1 textcenter"><img src="images/user-udi-small.png" /></div>
+										<div class="span11">
+											<div class="title">Created <a href="#">Data Flow 3</a> in Hypothesis Classifier Sensitivity</div>
+											<div>
+												<span class="icon-redirect"></span>
+												<span class="icon-paperclip"></span>
+												<span><img src="images/user-udi-small.png" /></span>
+												<span><img src="images/user-john-small.png" /></span>
+												<span><img src="images/user-chris-small.png" /></span>
+												<span class="icon-comments"></span>
+												<span>3</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="span12 kin10">
+									<div class="row-fluid">
+										<div class="span6 textcenter">2:45pm</div>
+										<div class="span4 textcenter"><div class="icon-kingreen"></div></div>
+									</div>
+								</div>
+						</div>
+					</div>
+					</div> <!-- .kinect-timeline -->
+					
+				</div>
+				
+				</div> <!-- .kinection-regular -->
+				
+			
+			</div> <!-- #kinection -->
+			
+		</div>
+	</div>
+</section>
+
+<div id="pageslide" class="pageslide" style="display:none;">
+<div id="secondary">
+	
+	<ul class="PSNav">
+    	<li class="active" rel="#tab-project"><div class="nav-project">Project</div></li>
+    	<li rel="#tab-platform"><div class="nav-platform">Platform</div></li>
+	</ul>
+	
+	<div class="tabs-container">
+		<div id="tab-project" class="pstab activetab">
+			
+			<br />
+			<div class="firstbt"><div class="btnPullout newfile" rel="new-project.html" level="level1"><span class="btplus">+</span> <span>New Project</span></div></div>
+		    <ul class="level1">
+		    	<li>
+		    		<div class="level1 projmanager-tooltip" title="Project">
+		    			<span id="#ul1-link1" class="level-link level-link-arrow" data="Improve demographic identification of users" level="level1" rel="project1.html">&#9655;</span>
+		    			<span id="#ul1-link1" class="level-link level-link-text"  data="Improve demographic identification of users" level="level1" rel="project1.html">Improve demographic identification of users</span>
+		    		</div>
+		    		<ul id="ul1-link1" style="display:none;">
+		    			<div class="btnPullout newfile" rel="new-hypothesis.html" level="level2"><span class="btplus">+</span> <span>New Hypothesis</span></div>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul1-ul1-link1" class="level-link level-link-arrow" data="Age" level="level2" rel="hypothesisA1.html">&#9655;</span>
+		    					<span id="#ul1-ul1-link1" class="level-link level-link-text"  data="Age" level="level2" rel="hypothesisA1.html">Age</span>
+		    				</div>
+		    				<ul id="ul1-ul1-link1" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul1-link1" class="level-link level-link-text" data="SVM/Domains" level="level3" rel="dataflowA1a.html">SVM/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul1-link2" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA1b.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul1-link3" class="level-link level-link-text" data="SVM/Categories" level="level3" rel="dataflowA1c.html">SVM/Categories</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul1-link4" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA1d.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul1-ul1-link2" class="level-link level-link-arrow" data="Income" level="level2" rel="hypothesisA2.html">&#9655;</span>
+		    					<span id="#ul1-ul1-link2" class="level-link level-link-text"  data="Income" level="level2" rel="hypothesisA2.html">Income</span>
+		    				</div>
+		    				<ul id="ul1-ul1-link2" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul2-link1" class="level-link level-link-text" data="SVM/Domains" level="level3" rel="dataflowA2a.html">SVM/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul2-link2" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA2b.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul2-link3" class="level-link level-link-text" data="SVM/Categories" level="level3" rel="dataflowA2c.html">SVM/Categories</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul2-link4" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA2d.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul1-ul1-link3" class="level-link level-link-arrow" data="Gender" level="level2" rel="hypothesisA3.html">&#9655;</span>
+		    					<span id="#ul1-ul1-link3" class="level-link level-link-text"  data="Gender" level="level2" rel="hypothesisA3.html">Gender</span>
+		    				</div>
+		    				<ul id="ul1-ul1-link3" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul3-link1" class="level-link level-link-text" data="SVM/Domains" level="level3" rel="dataflowA3a.html">SVM/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul3-link2" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA3b.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul3-link3" class="level-link level-link-text" data="SVM/Categories" level="level3" rel="dataflowA3c.html">SVM/Categories</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul3-link4" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA3d.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul1-ul1-link4" class="level-link level-link-arrow" data="Demographics" level="level2" rel="hypothesisA4.html">&#9655;</span>
+		    					<span id="#ul1-ul1-link4" class="level-link level-link-text"  data="Demographics" level="level2" rel="hypothesisA4.html">Demographics</span>
+		    				</div>
+		    				<ul id="ul1-ul1-link4" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul4-link1" class="level-link level-link-text" data="SVM/Domains" level="level3" rel="dataflowA4a.html">SVM/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul4-link2" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA4b.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul4-link3" class="level-link level-link-text" data="SVM/Categories" level="level3" rel="dataflowA4c.html">SVM/Categories</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul1-ul1-ul4-link4" class="level-link level-link-text" data="Linear Regression/Domains" level="level3" rel="dataflowA4d.html">Linear Regression/Domains</span>
+		    						</div>
+		    					</li>
+		    				</ul>
+		    			</li>
+		    		</ul>
+		    	</li>
+		    	<li>
+		    		<div class="level1 projmanager-tooltip" title="Project">
+		    			<span id="#ul2-link1" class="level-link level-link-arrow" data="Improve Domain Categorization" level="level1" rel="project2.html">&#9655;</span>
+		    			<span id="#ul2-link1" class="level-link level-link-text"  data="Improve Domain Categorization" level="level1" rel="project2.html">Improve Domain Categorization</span>
+		    		</div>
+		    		<ul id="ul2-link1" style="display:none;">
+		    			<div class="btnPullout newfile" rel="new-hypothesis.html" level="level2"><span class="btplus">+</span> <span>New Hypothesis</span></div>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul2-ul1-link1" class="level-link level-link-arrow" data="Predict Categorization" level="level2" rel="hypothesisB1.html">&#9655;</span>
+		    					<span id="#ul2-ul1-link1" class="level-link level-link-text"  data="Predict Categorization" level="level2" rel="hypothesisB1.html">Predict Categorization</span>
+		    				</div>
+		    				<ul id="ul2-ul1-link1" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul2-ul1-link2" class="level-link level-link-arrow" data="Random Forest" level="level2" rel="hypothesisB2.html">&#9655;</span>
+		    					<span id="#ul2-ul1-link2" class="level-link level-link-text"  data="Random Forest" level="level2" rel="hypothesisB2.html">Random Forest</span>
+		    				</div>
+		    				<ul id="ul2-ul1-link2" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul2-ul1-link3" class="level-link level-link-arrow" data="Logistic Regression" level="level2" rel="hypothesisB3.html">&#9655;</span>
+		    					<span id="#ul2-ul1-link3" class="level-link level-link-text"  data="Logistic Regression" level="level2" rel="hypothesisB3.html">Logistic Regression</span>
+		    				</div>
+		    				<ul id="ul2-ul1-link3" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    				</ul>
+		    			</li>
+		    		</ul>
+		    	</li>
+		    	<li>
+		    		<div class="level1 projmanager-tooltip" title="Project">
+		    			<span id="#ul3-link1" class="level-link level-link-arrow" data="Flat emotional response curves for Asian subjects" level="level1" rel="project3.html">&#9655;</span>
+		    			<span id="#ul3-link1" class="level-link level-link-text"  data="Flat emotional response curves for Asian subjects" level="level1" rel="project3.html">Flat emotional response curves for Asian subjects</span>
+		    		</div>
+		    		<ul id="ul3-link1" style="display:none;">
+		    			<div class="btnPullout newfile" rel="new-hypothesis.html" level="level2"><span class="btplus">+</span> <span>New Hypothesis</span></div>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul3-ul1-link1" class="level-link level-link-arrow" data="Classifiers" level="level2" rel="hypothesisC1.html">&#9655;</span>
+		    					<span id="#ul3-ul1-link1" class="level-link level-link-text"  data="Classifiers" level="level2" rel="hypothesisC1.html">Classifiers</span>
+		    				</div>
+		    				<ul id="ul3-ul1-link1" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul3-ul1-ul3-link1" class="level-link level-link-text" data="Model Flow 1" level="level3" rel="dataflowC1a.html">Model Flow 1</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul3-ul1-ul3-link2" class="level-link level-link-text" data="Model Flow 2" level="level3" rel="dataflowC1b.html">Model Flow 2</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul3-ul1-ul3-link3" class="level-link level-link-text" data="Model Flow 3" level="level3" rel="dataflowC1c.html">Model Flow 3</span>
+		    						</div>
+		    					</li>
+		    					<li>
+		    						<div id="level3" class="level3 projmanager-tooltip" title="Data Flow">
+		    							<span id="#ul3-ul1-ul3-link4" class="level-link level-link-text" data="Model Flow 4" level="level3" rel="dataflowC1d.html">Model Flow 4</span>
+		    						</div>
+		    					</li>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul3-ul1-link2" class="level-link level-link-arrow" data="Cultural Expressions" level="level2" rel="hypothesisC2.html">&#9655;</span>
+		    					<span id="#ul3-ul1-link2" class="level-link level-link-text"  data="Cultural Expressions" level="level2" rel="hypothesisC2.html">Cultural Expressions</span>
+		    				</div>
+		    				<ul id="ul3-ul1-link2" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul3-ul1-link3" class="level-link level-link-arrow" data="Moderator influence" level="level2" rel="hypothesisC3.html">&#9655;</span>
+		    					<span id="#ul3-ul1-link3" class="level-link level-link-text"  data="Moderator influence" level="level2" rel="hypothesisC3.html">Moderator influence</span>
+		    				</div>
+		    				<ul id="ul3-ul1-link3" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    				</ul>
+		    			</li>
+		    			<li>
+		    				<div class="level2 projmanager-tooltip" id="level2" title="Hypothesis">
+		    					<span id="#ul3-ul1-link4" class="level-link level-link-arrow" data="Ad Type" level="level2" rel="hypothesisC4.html">&#9655;</span>
+		    					<span id="#ul3-ul1-link4" class="level-link level-link-text"  data="Ad Type" level="level2"rel="hypothesisC4.html">Ad Type</span>
+		    				</div>
+		    				<ul id="ul3-ul1-link4" style="display:none;">
+		    					<div class="btnPullout newfile" rel="new-dataflow.html" level="level3"><span class="btplus">+</span> <span>New Data Flow</span></div>
+		    				</ul>
+		    			</li>
+		    		</ul>
+		    	</li>
+		    </ul>
+			
+		</div> <!-- .tabs-project -->
+		
+		<div id="tab-platform" class="pstab">
+			
+			
+			
+			
+		</div> <!-- .tabs-platform -->
+	</div> <!-- .tabs-container -->
+    
+		    
+    
+</div> <!-- #secondary -->
+</div> <!-- #pageslide -->
+
+<!-- javascripts --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/jquery.pageslide.js"></script>
+<script type="text/javascript" src="js/jquery-hover-dropdown-box.js"></script>
+<script type="text/javascript" src="js/jquery.tooltipster.js"></script>
+<script type="text/javascript" src="js/ss-standard.js"></script>
+<script type="text/javascript" src="js/jquery.tagsinput.js"></script>
+<script type="text/javascript" src="js/jquery.droptabs.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>
